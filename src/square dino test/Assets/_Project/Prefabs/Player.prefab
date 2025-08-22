@@ -177,8 +177,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5132c3f9b9b44247bce72e311b1020ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerMovement: {fileID: -7287556149446005769}
-  _playerInputListener: {fileID: 3571836583873316757}
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+  movement: {fileID: -7287556149446005769}
+  movementInputListener: {fileID: 3571836583873316757}
 --- !u!1 &3952353203107502136
 GameObject:
   m_ObjectHideFlags: 0
