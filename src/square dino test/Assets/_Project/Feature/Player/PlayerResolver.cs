@@ -18,9 +18,28 @@ namespace Feature.Player
 
 		void Start()
 		{
+			if (isLocalPlayer)
+			{
+				InitPlayer();
+			}
+			else
+			{
+				InitNotLocalPlayer();
+			}
+		}
+
+		void InitPlayer()
+		{
 			movement
 				.Construct(movementInputListener)
 				.Init();
+		}
+
+		void InitNotLocalPlayer()
+		{
+			Destroy(movement);
+			Destroy(movementInputListener);
+			Destroy(this);
 		}
 	}
 }
