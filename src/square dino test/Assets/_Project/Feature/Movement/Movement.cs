@@ -28,6 +28,13 @@ namespace Feature.Movement
 		{
 			var velocity = new Vector3(value.x, 0, value.y) * _speed;
 			_rigidbody.velocity = velocity;
+			Rotate(velocity);
+		}
+
+		void Rotate(Vector3 velocity)
+		{
+			if (velocity != Vector3.zero) 
+				transform.rotation = Quaternion.LookRotation(velocity);
 		}
 	}
 }
