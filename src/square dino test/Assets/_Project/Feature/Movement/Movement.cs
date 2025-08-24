@@ -27,7 +27,7 @@ namespace Feature.Movement
 		void Move(Vector2 value)
 		{
 			var velocity = new Vector3(value.x, 0, value.y) * _speed;
-			_rigidbody.linearVelocity = velocity;
+			_rigidbody.velocity = velocity;
 		}
 	}
 }
