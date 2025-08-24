@@ -6,5 +6,6 @@ namespace Infrastructure.AssetProvider
 	public sealed class AssetProvider : ScriptableObject, IAssetProvider
 	{
 		[field: SerializeField] public GameObject Player { get; private set; }
+		[field: SerializeField] public GameObject Cube { get; private set; }
 	}
 }

@@ -7,18 +7,18 @@ namespace Feature.Player
 {
 	public sealed class NotLocalPlayerInit : NetworkBehaviour
 	{
-		[SerializeField] Movement.Movement movement;
-		[SerializeField] MovementInputListener movementInputListener;
+		[SerializeField] Movement.Movement _movement;
+		[SerializeField] InputInputListener _inputInputListener;
 
 		void Start()
 		{
-			Assert.IsNotNull(movement);
-			Assert.IsNotNull(movementInputListener);
+			Assert.IsNotNull(_movement);
+			Assert.IsNotNull(_inputInputListener);
 
 			if (!isLocalPlayer)
 			{
-				Destroy(movement);
-				Destroy(movementInputListener);
+				Destroy(_movement);
+				Destroy(_inputInputListener);
 				Destroy(this);
 			}
 		}

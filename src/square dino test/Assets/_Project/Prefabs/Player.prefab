@@ -50,6 +50,7 @@ GameObject:
   - component: {fileID: 1509344796732184496}
   - component: {fileID: 67726400743624741}
   - component: {fileID: 7853252678940612410}
+  - component: {fileID: 3577434341052130347}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -217,8 +218,9 @@ MonoBehaviour:
   syncDirection: 0
   syncMode: 0
   syncInterval: 0
-  movement: {fileID: -7287556149446005769}
-  movementInputListener: {fileID: 3571836583873316757}
+  _cubeSpawner: {fileID: 3577434341052130347}
+  _movement: {fileID: -7287556149446005769}
+  _inputInputListener: {fileID: 3571836583873316757}
 --- !u!114 &1509344796732184496
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +262,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 11612ba5a1c09cf4ebafc8bd13f1f15d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncDirection: 0
+  syncMode: 0
+  syncInterval: 0
+--- !u!114 &3577434341052130347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073495388883929238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45430b2d6f464590aa37adfce73cf01a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   syncDirection: 0
@@ -631,7 +648,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdddaae3920346edaa2c03b60a39fd12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementInputListener: {fileID: 3571836583873316757}
+  _inputInputListener: {fileID: 3571836583873316757}
 --- !u!1 &8878460391410903025
 GameObject:
   m_ObjectHideFlags: 0

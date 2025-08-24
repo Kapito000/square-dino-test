@@ -5,11 +5,11 @@ namespace Feature.Movement
 {
 	public sealed class MovementInstaller : MonoInstaller
 	{
-		[SerializeField] MovementInputListener movementInputListener;
+		[SerializeField] InputInputListener _inputInputListener;
 		
 		public override void InstallBindings()
 		{
-			Container.Bind<IMovementController>().FromInstance(movementInputListener).AsSingle();
+			Container.Bind<IInputController>().FromInstance(_inputInputListener).AsSingle();
 		}
 	}
 }

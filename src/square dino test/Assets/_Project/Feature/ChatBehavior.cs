@@ -11,7 +11,7 @@ namespace Feature
 	public class ChatBehavior : NetworkBehaviour
 	{
 		[Inject] INicknameProvider _nicknameProvider;
-		[Inject] IMovementController _movementController;
+		[Inject] IInputController _inputController;
 
 		string Nickname => _nicknameProvider.Nickname;
 
@@ -19,7 +19,7 @@ namespace Feature
 
 		void Awake()
 		{
-			_movementController.SendMsg
+			_inputController.SendMsg
 				.Subscribe(Send)
 				.AddTo(this);
 		}

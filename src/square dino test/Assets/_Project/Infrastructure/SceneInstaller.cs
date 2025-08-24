@@ -1,4 +1,6 @@
-﻿using Feature.Player.Nickname;
+﻿using Feature.ItemSpawner;
+using Feature.ItemSpawner.Factory;
+using Feature.Player.Nickname;
 using Mirror;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -14,9 +16,18 @@ namespace Infrastructure
 
 		public override void InstallBindings()
 		{
+			BindCubeFactory();
 			BindNickNameCanvas();
 			BindNicknameProvider();
 			BindNetworkManagerHUD();
+		}
+
+		void BindCubeFactory()
+		{
+			Container
+				.Bind<ICubeFactory>()
+				.To<CubeFactory>()
+				.AsSingle();
 		}
 
 		void BindNickNameCanvas()

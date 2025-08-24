@@ -5,13 +5,21 @@ using UnityEngine.InputSystem;
 
 namespace Feature.Movement
 {
-	public sealed class MovementInputListener : MonoBehaviour, IMovementController
+	public sealed class InputInputListener : MonoBehaviour, IInputController
 	{
 		readonly Subject<Unit> _sendMsg = new();
+		readonly Subject<Unit> _spawnCube = new();
 		readonly Subject<Vector2> _movementDir = new();
 
 		public IObservable<Unit> SendMsg => _sendMsg;
+		public IObservable<Unit> SpawnCube => _spawnCube;
 		public IObservable<Vector2> MovementDir => _movementDir;
+
+		void OnDestroy()
+		{
+			_movementDir.OnCompleted();
+			_movementDir.Dispose();
+		}
 
 		void OnMove(InputValue value)
 		{
@@ -19,15 +27,14 @@ namespace Feature.Movement
 			_movementDir.OnNext(dir);
 		}
 
-		void OnJump(InputValue value)
+		void OnJump()
 		{
 			_sendMsg.OnNext(Unit.Default);
 		}
 
-		void OnDestroy()
+		void OnInteract(InputValue value)
 		{
-			_movementDir.OnCompleted();
-			_movementDir.Dispose();
+			_spawnCube.OnNext(Unit.Default);
 		}
 	}
 }

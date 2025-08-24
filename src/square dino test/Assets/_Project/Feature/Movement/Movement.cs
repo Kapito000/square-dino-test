@@ -11,9 +11,9 @@ namespace Feature.Movement
 		[SerializeField] Rigidbody _rigidbody;
 
 		[Inject]
-		void Construct(IMovementController movementController)
+		void Construct(IInputController inputController)
 		{
-			movementController
+			inputController
 				.MovementDir
 				.Subscribe(Move)
 				.AddTo(this);

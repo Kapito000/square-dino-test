@@ -18,7 +18,7 @@ namespace Infrastructure
 
 		public override void OnStartClient()
 		{
-			NetworkClient.RegisterPrefab(_assetProvider.Player);
+			RegisterPrefabs();
 		}
 
 		public override void OnClientConnect()
@@ -26,7 +26,7 @@ namespace Infrastructure
 			base.OnClientConnect();
 			NetworkClient.Send(new AddPlayerMessage());
 		}
-		
+
 		void OnCreateCharacter(NetworkConnectionToClient conn,
 			AddPlayerMessage message)
 		{
@@ -34,6 +34,12 @@ namespace Infrastructure
 			var player = _playerFactory.Create(startPos.position);
 			player.name = $"{_assetProvider.Player} [connId={conn.connectionId}]";
 			NetworkServer.AddPlayerForConnection(conn, player);
+		}
+
+		void RegisterPrefabs()
+		{
+			NetworkClient.RegisterPrefab(_assetProvider.Player);
+			NetworkClient.RegisterPrefab(_assetProvider.Cube);
 		}
 	}
 }
