@@ -31,7 +31,8 @@ namespace Feature.Player.Nickname
 		{
 			if (string.IsNullOrEmpty(Nickname))
 			{
-				Debug.LogWarning("The nickname is empty.");
+				_inputField.text = System.Guid.NewGuid().ToString();
+				Debug.LogWarning("The nickname not entered.");
 				return;
 			}
 
