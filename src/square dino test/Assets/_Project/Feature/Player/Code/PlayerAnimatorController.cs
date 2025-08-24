@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Mirror;
+using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace Feature.Player
@@ -17,9 +18,9 @@ namespace Feature.Player
 		void Update()
 		{
 			if (_rigidbody.velocity.sqrMagnitude > .01)
-				_playerAnimator.Run(true);
+				_playerAnimator.CmdRun(true);
 			else
-				_playerAnimator.Run(false);
+				_playerAnimator.CmdRun(false);
 		}
 	}
 }

@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using Mirror;
+using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace Feature.Player
 {
-	public sealed class PlayerAnimator : MonoBehaviour
+	public sealed class PlayerAnimator : NetworkBehaviour
 	{
 		static readonly int _run = Animator.StringToHash("run");
 
@@ -14,7 +15,8 @@ namespace Feature.Player
 			Assert.IsNotNull(_animator);
 		}
 
-		public void Run(bool enable)
+		[Command]
+		public void CmdRun(bool enable)
 		{
 			_animator.SetBool(_run, enable);
 		}
