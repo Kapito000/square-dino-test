@@ -12,7 +12,7 @@ namespace Feature
 	{
 		[Inject] INicknameProvider _nicknameProvider;
 		[Inject] IMovementController _movementController;
-		
+
 		string Nickname => _nicknameProvider.Nickname;
 
 		static event Action<string> OnMessage;
@@ -37,7 +37,7 @@ namespace Feature
 		[Client]
 		void Send(Unit unit)
 		{
-			CmdSendMessage(Nickname + " says hello!");
+			CmdSendMessage("Hello from " + Nickname);
 		}
 
 		void HandleNewMessage(string message)
