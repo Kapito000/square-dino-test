@@ -1,6 +1,7 @@
 ﻿using UniRx;
 using UnityEngine;
 using UnityEngine.Assertions;
+using Zenject;
 
 namespace Feature.Movement
 {
@@ -8,26 +9,19 @@ namespace Feature.Movement
 	{
 		[SerializeField] float _speed = 1.0f;
 		[SerializeField] Rigidbody _rigidbody;
-		
-		IMovementController _movementController;
+
+		[Inject]
+		void Construct(IMovementController movementController)
+		{
+			movementController
+				.MovementDir
+				.Subscribe(Move)
+				.AddTo(this);
+		}
 
 		void Awake()
 		{
 			Assert.IsNotNull(_rigidbody);
-		}
-
-		public Movement Construct(IMovementController movementController)
-		{
-			_movementController = movementController;
-			return this;
-		}
-
-		public void Init()
-		{
-			_movementController
-				.MovementDir
-				.Subscribe(Move)
-				.AddTo(this);
 		}
 
 		void Move(Vector2 value)
