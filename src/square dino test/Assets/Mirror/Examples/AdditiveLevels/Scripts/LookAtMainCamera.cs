@@ -8,7 +8,7 @@ namespace Mirror.Examples.AdditiveLevels
         // This will be enabled by Portal script in OnStartClient
         void OnValidate()
         {
-            this.enabled = false;
+            // this.enabled = false;
         }
 
         // LateUpdate so that all camera updates are finished.

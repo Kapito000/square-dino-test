@@ -638,6 +638,7 @@ GameObject:
   - component: {fileID: 112103828138666425}
   - component: {fileID: 1061480638816724163}
   - component: {fileID: 4250839632552827484}
+  - component: {fileID: 940673323397155617}
   m_Layer: 0
   m_Name: Nickname
   m_TagString: Untagged
@@ -815,6 +816,18 @@ MonoBehaviour:
   syncInterval: 0.1
   _playerName: my name
   _nicknameView: {fileID: 1061480638816724163}
+--- !u!114 &940673323397155617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8878460391410903025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc58300ee45438a418d9e32957fdc0c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1720917237985776600
 PrefabInstance:
   m_ObjectHideFlags: 0
