@@ -13,7 +13,7 @@ namespace Infrastructure
 
 		public override void OnStartServer()
 		{
-			NetworkServer.RegisterHandler<AddPlayerMessage>(OnCreateCharacter);
+			NetworkServer.ReplaceHandler<AddPlayerMessage>(OnCreateCharacter);
 		}
 
 		public override void OnStartClient()
