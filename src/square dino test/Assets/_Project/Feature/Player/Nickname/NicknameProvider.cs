@@ -33,7 +33,6 @@ namespace Feature.Player.Nickname
 			{
 				_inputField.text = System.Guid.NewGuid().ToString();
 				Debug.LogWarning("The nickname not entered.");
-				return;
 			}
 
 			_nickNameCanvas.enabled = false;
