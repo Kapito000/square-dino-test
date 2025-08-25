@@ -17,8 +17,7 @@ namespace Feature.Player
 			Assert.IsNotNull(_animator);
 		}
 
-		[Command]
-		public void CmdRun(bool enable)
+		public void Run(bool enable)
 		{
 			_animator.SetBool(_run, enable);
 		}

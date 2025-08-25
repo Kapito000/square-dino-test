@@ -18,9 +18,9 @@ namespace Feature.Player
 		void Update()
 		{
 			if (_rigidbody.velocity.sqrMagnitude > .01)
-				_playerAnimator.CmdRun(true);
+				_playerAnimator.Run(true);
 			else
-				_playerAnimator.CmdRun(false);
+				_playerAnimator.Run(false);
 		}
 	}
 }
