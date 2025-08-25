@@ -30,6 +30,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2178931024746261659}
+  - {fileID: 5430842828434888491}
+  - {fileID: 6956228775638456207}
   m_Father: {fileID: 7043224381413354563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1073495388883929238
@@ -206,7 +208,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 10
-  _rigidbody: {fileID: 7695489841420966785}
 --- !u!114 &5609354400872728568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +240,8 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 2850547135968212229}
+  - {fileID: 4793309147268847743}
+  - {fileID: 2312524087436614940}
   _installerPrefabs: []
   _autoRun: 1
   _kernel: {fileID: 0}
@@ -313,11 +316,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02e17dd12d97477c806a90803473efcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncDirection: 0
-  syncMode: 0
-  syncInterval: 0
-  _rigidbody: {fileID: 7695489841420966785}
-  _playerAnimator: {fileID: 8857160725786131110}
 --- !u!114 &6122035911915219566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,6 +539,96 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a6cd4531e4242419c33458d1b01334, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &4604993938654335391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6956228775638456207}
+  - component: {fileID: 2312524087436614940}
+  m_Layer: 0
+  m_Name: Player installer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6956228775638456207
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4604993938654335391}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 300106320648024686}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2312524087436614940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4604993938654335391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cd5485a8d5c4f3faa7d03eaea324725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterAnimator: {fileID: 5831884450279352620}
+--- !u!1 &5568039376076254101
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5430842828434888491}
+  - component: {fileID: 4793309147268847743}
+  m_Layer: 0
+  m_Name: Rigidbody installer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5430842828434888491
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5568039376076254101}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 300106320648024686}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4793309147268847743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5568039376076254101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58085b66cf0e4557ab90ff04318ce6df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 7695489841420966785}
 --- !u!1 &5923238030803283291
 GameObject:
   m_ObjectHideFlags: 0
@@ -616,7 +704,7 @@ GameObject:
   - component: {fileID: 2178931024746261659}
   - component: {fileID: 2850547135968212229}
   m_Layer: 0
-  m_Name: PlayerInstaller
+  m_Name: Movement installer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

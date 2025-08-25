@@ -1,13 +1,13 @@
-﻿using Mirror;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Assertions;
+using Zenject;
 
 namespace Feature.Player
 {
 	public sealed class PlayerAnimatorController : MonoBehaviour
 	{
-		[SerializeField] Rigidbody _rigidbody;
-		[SerializeField] PlayerAnimator _playerAnimator;
+		[Inject] Rigidbody _rigidbody;
+		[Inject] PlayerAnimator _playerAnimator;
 
 		void Awake()
 		{

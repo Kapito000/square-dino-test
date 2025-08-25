@@ -1,6 +1,5 @@
 ﻿using UniRx;
 using UnityEngine;
-using UnityEngine.Assertions;
 using Zenject;
 
 namespace Feature.Movement
@@ -8,7 +7,8 @@ namespace Feature.Movement
 	public sealed class Movement : MonoBehaviour
 	{
 		[SerializeField] float _speed = 1.0f;
-		[SerializeField] Rigidbody _rigidbody;
+		
+		[Inject] Rigidbody _rigidbody;
 
 		[Inject]
 		void Construct(IInputController inputController)
@@ -17,11 +17,6 @@ namespace Feature.Movement
 				.MovementDir
 				.Subscribe(Move)
 				.AddTo(this);
-		}
-
-		void Awake()
-		{
-			Assert.IsNotNull(_rigidbody);
 		}
 
 		void Move(Vector2 value)

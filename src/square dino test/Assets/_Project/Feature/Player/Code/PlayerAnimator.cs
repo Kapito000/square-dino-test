@@ -1,6 +1,7 @@
 ﻿using Mirror;
 using UnityEngine;
 using UnityEngine.Assertions;
+using Zenject;
 
 namespace Feature.Player
 {
@@ -8,7 +9,8 @@ namespace Feature.Player
 	{
 		static readonly int _run = Animator.StringToHash("run");
 
-		[SerializeField] Animator _animator;
+		[Inject(Id = PlayerInstaller.CharacterAnimatorId)]
+		Animator _animator;
 
 		void Awake()
 		{

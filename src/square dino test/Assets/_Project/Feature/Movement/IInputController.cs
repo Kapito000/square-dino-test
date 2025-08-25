@@ -7,7 +7,7 @@ namespace Feature.Movement
 	public interface IInputController
 	{
 		IObservable<Unit> SendMsg { get; }
-		IObservable<Vector2> MovementDir { get; }
 		IObservable<Unit> SpawnCube { get; }
+		IObservable<Vector2> MovementDir { get; }
 	}
 }
